@@ -5,7 +5,8 @@ steps:
     
     -   id: "Execultando golang"
         name: 'mirror.gcr.io/library/golang'
-        args: ['go','run','server.go']
+        args: ['go','run','go/server.go']
+        dir: 'go/'
 
     -   id: "Realizando Teste Unitarios"
         name: 'mirror.gcr.io/library/golang'
