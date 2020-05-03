@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-http
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-http
+      tier: http
+  
+  template :
+    metadata: 
+      labels:
+        app: go-http
+        tier: http
+    spec:
+      containers:
+      - image: brmaschio/desafio-go-http:latest
+        name: go-http
+        ports:
+        - containerPort: 8000
